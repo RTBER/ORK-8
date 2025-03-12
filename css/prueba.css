@@ -1,0 +1,514 @@
+
+/* Estilos generales */
+
+.content-wrapper {
+  padding: 0 3rem !important; /* Mismo padding que el nav-container */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chapter-item {
+  margin: 20px 0px; /* Márgenes verticales y horizontales */
+}
+
+.chapter-title {
+  display: flex; /* Para alinear icono y texto */
+  align-items: center; /* Centrar verticalmente */
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 15px 20px; /* Aumentar el padding */
+  background-color: #2a2a2a;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 10px; /* Bordes más redondeados */
+  margin-bottom: 10px;
+}
+
+.chapter-title:hover {
+  background-color: #383838;  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil al hacer hover */
+}
+
+.chapter-title::before { /* Icono */
+  content: '\279C'; /* Flecha hacia abajo */
+  margin-right: 10px;
+  font-size: 20px;
+  transition: transform 0.3s; /* Transición para la rotación */
+}
+
+.chapter-title[aria-expanded="true"]::before { /* Rotar el icono cuando el acordeón está abierto */
+  transform: rotate(180deg);
+}
+
+/* Estilos para los capítulos */
+.chapter-content {
+  display: none;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 30px;
+  border-radius: 8px;
+  overflow: hidden; /* Para la animación de entrada */
+  background-color: #2a2a2a;  /* Fondo sutil */
+  transition: transform 0.3s, opacity 0.3s; /* Transición suave */
+  transform: translateY(-10px); /* Ocultar inicialmente */
+  opacity: 0; /* Ocultar inicialmente */
+}
+
+.chapter-content.active {
+  display: block;
+  transform: translateY(0); /* Mostrar con animación */
+  opacity: 1; /* Mostrar con animación */
+}
+
+.chapter-link {
+  font-size: 16px;
+  display: flex; /* Para alinear icono y texto */
+  align-items: center; /* Centrar verticalmente */
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px; /* Aumentar el padding */
+  margin: 10px 0; /* Márgenes para separar enlaces */
+  border-radius: 8px;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196, 194, 194, 0.2);  
+  font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
+}
+
+.chapter-link:hover {
+  color: #ffcc00; /* Amarillo más vibrante */
+  transform: translateX(10px); /* Desplazamiento más notorio al hacer hover */
+}
+
+.chapter-link::before { /* Icono */
+  content: '\27A1'; /* Flecha a la derecha */
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .chapter-item {
+      margin: 15px 5px;
+  }
+
+  .chapter-title {
+      font-size: 20px;
+  }
+
+  .chapter-link {
+      font-size: 16px;
+      padding: 10px 15px;
+  }
+}
+
+
+
+/* Estilos para el layout */
+.contenedor-principal {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#lista-capitulos-novela-volumen-13 {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.facebook-container {
+  background-color: var(--color-primario);
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  padding: 10px;
+}
+
+/* Media Query para móviles */
+@media (max-width: 768px) {
+  .contenedor-principal {
+    flex-direction: column;
+  }
+  
+  .facebook-container,
+  #lista-capitulos-novela-volumen-13 {
+    width: 100%;
+    flex: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+.novela-page {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+
+}
+
+.novela-image {
+  max-width:350px;
+  flex-shrink: 0;
+}
+
+.novela-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.novela-info {
+  flex: 1;
+}
+
+.novelos-info {
+  padding: 2px;
+  padding-left: 0px;
+  border-radius: 8px;
+}
+
+.novelo-title {
+  font-size: 19px !important;
+  color: #ffd700;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-family: "Poppins", Sans-serif ;
+}
+
+
+.novela-title {
+  font-size: 30px !important;
+  color: #8ea2b6 !important;
+  font-weight: 600;
+  font-family: "Poppins", Sans-serif ;
+}
+
+.volumen-title {
+  font-size: 25px !important;
+  color: #e0e0e0 !important;
+  font-weight: 700;
+  font-family: "Poppins", Sans-serif ;
+}
+
+.volumen-subtitle {
+  margin-top: 10px;
+  font-size: 20px !important;
+  color: #e0e0e0!important;
+  font-weight: 600;
+  font-family: "Poppins", Sans-serif ;
+}
+
+.volumen-stitle {
+  margin-top: 10px;
+  font-size: 25px !important;
+  color: #e0e0e0 !important;
+  font-weight: 600;
+  font-family: "Poppins", Sans-serif ;
+}
+
+
+.novelo-description {
+  margin: 3px 0;
+  line-height: 1.6;
+  word-wrap: break-word;
+  font-size: 17px;
+  color: #cccccc;
+  font-weight: 500;
+  font-family: 'Georgia', serif;
+}
+
+.novela-description {
+  margin-bottom: 10px !important;
+  margin: 3px 0;
+  line-height: 1.6;
+  word-wrap: break-word;
+  font-size: 17px;
+  color: #cccccc;
+  font-weight: 500;
+  font-family: 'Georgia', serif;
+}
+
+.novelas-description{
+font-style: italic;  /* Cursiva para simular un pensamiento */
+margin-bottom: 10px !important;
+margin: 3px 0;
+line-height: 1.6;
+word-wrap: break-word;
+font-size: 17px;
+color: #cccccc;
+font-weight: 500;
+font-family: 'Georgia', serif;
+}
+
+
+
+
+.description-title {
+  font-size: 19px !important;
+  color: #ffd700;
+  font-weight: 600;
+  font-family: "Poppins", Sans-serif ;
+}
+
+
+.facebook-link {
+  color: #ffd700; /* Color de Facebook */
+}
+
+
+/* Estilos para móviles (menos de 768px) */
+@media (max-width: 768px) {
+  .novela-page {
+      flex-direction: column; /* Apila los elementos verticalmente */
+  }
+  
+  .novela-image {
+      max-width: 90%; /* La imagen ocupa hasta el 90% del ancho del contenedor */
+      padding-top: 0px !important;
+      margin-left: auto;  /* Centra el contenedor horizontalmente */
+      margin-right: auto; /* Centra el contenedor horizontalmente */
+      display: block; /* Asegura que el contenedor sea un bloque para el centrado */
+  }
+  
+  .novela-title {
+      margin-top: -15px;
+      font-size: 20px !important;
+      color: #8ea2b6 !important;
+      font-weight: 600;
+      margin-bottom: 5px;
+      font-family: "Poppins", Sans-serif;
+      text-align: center; /* Centra el texto horizontalmente */
+      margin-left: auto;  /* Ajusta los márgenes para centrar el texto */
+      margin-right: auto; /* Ajusta los márgenes para centrar el texto */
+  }
+  
+  .description-title {
+      margin-top: -5px;
+      font-size: 19px !important;
+      color: #ffd700;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-family: "Poppins", Sans-serif ;
+  }
+  
+  .novelo-description {
+      font-size: 16px;
+  }
+  .novela-description {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: 16px;
+      margin-right: 15px;
+  }
+
+  .volumen-title {
+    margin-top: -20px;
+    font-size: 20px !important;
+    color: #8ea2b6 !important;
+    font-weight: 600;
+    font-family: "Poppins", Sans-serif ;
+  }
+
+  .volumen-stitle {
+    margin-top: 10px;
+    font-size: 20px !important;
+    color: #8ea2b6 !important;
+    font-weight: 600;
+    font-family: "Poppins", Sans-serif ;
+  }
+
+  .volumen-subtitle {
+    margin-top: 10px;
+    font-size: 18px !important;
+    color: #8ea2b6 !important;
+    font-weight: 600;
+    font-family: "Poppins", Sans-serif ;
+  }
+}
+
+/* Estilos para tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .novela-page {
+      gap: 15px; /* Reduce el espacio entre elementos */
+  }
+  
+  .novela-image {
+      max-width: 250px; /* Ajusta el tamaño de la imagen */
+  }
+}
+
+
+
+
+
+
+
+
+/* Estilo general para las imágenes dentro de los capítulos */
+.imagen-capitulo {
+  margin: 20px 0;  /* Márgenes arriba y abajo para separar la imagen del texto */
+  text-align: center;  /* Centra la imagen */
+}
+
+/* Asegura que las imágenes no se desborden y sean responsivas */
+.imagen-capitulo img {
+  max-width: 50%;  /* Hace que la imagen no se salga del contenedor */
+  height: auto;     /* Mantiene la relación de aspecto de la imagen */
+  border-radius: 8px;  /* Bordes redondeados (opcional) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra sutil alrededor de la imagen (opcional) */
+}
+
+.imagene-capitulo {
+  margin: 20px 0;  /* Márgenes arriba y abajo para separar la imagen del texto */
+  text-align: center;  /* Centra la imagen */
+}
+
+.imagene-capitulo img {
+  max-width: 75%;  /* Hace que la imagen no se salga del contenedor */
+  height: auto;     /* Mantiene la relación de aspecto de la imagen */
+  border-radius: 8px;  /* Bordes redondeados (opcional) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra sutil alrededor de la imagen (opcional) */
+}
+
+
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  /* Asegurarse que las imágenes no se desborden y se ajusten al contenedor en pantallas pequeñas */
+  .imagen-capitulo {
+      margin: 15px 0;  /* Reducimos los márgenes para pantallas más pequeñas */
+  }
+
+  .imagen-capitulo img {
+      max-width: 90%;  /* Mantiene la imagen dentro del contenedor */
+      height: auto;     /* Mantiene la proporción de la imagen */
+  }
+  .imagene-capitulo {
+    margin: 15px 0;  /* Reducimos los márgenes para pantallas más pequeñas */
+}
+
+.imagene-capitulo img {
+  margin-right: 20px;
+    max-width: 95%;  /* Mantiene la imagen dentro del contenedor */
+    height: auto;     /* Mantiene la proporción de la imagen */
+}
+
+}
+
+.novela-center{
+  text-align: center;  /* Centra la imagen */
+  margin-bottom: 10px !important;
+  margin: 3px 0;
+  line-height: 1.6;
+  word-wrap: break-word;
+  font-size: 17px;
+  color: #cccccc;
+  font-weight: 500;
+}
+
+
+
+
+/* Estilo para la barra de navegación de capítulos */
+.navegacion-capitulos {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 145px; /* Espacio entre los botones */
+  margin: 20px 0;
+}
+
+/* Estilo de los botones */
+.btn-navegacion {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+  padding: 12px 25px; /* Tamaño y espacio dentro del botón */
+  background-color: #ffd900ef; /* Color amarillo */
+  color: #333; /* Texto oscuro para buen contraste */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 30px; /* Bordes redondeados para un estilo más suave */
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: 600; /* Negrita para darle un poco más de presencia */
+  text-transform: uppercase; /* Texto en mayúsculas para un toque más moderno */
+  display: inline-block; /* Asegura que se comporten como botones */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la animación */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.btn-navegacion:hover {
+  transform: translateY(-4px); /* Mueve el botón un poco hacia arriba */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra más fuerte al pasar el ratón */
+}
+
+/* Efecto de foco (cuando el botón está enfocado, por ejemplo, con la tecla Tab) */
+.btn-navegacion:focus {
+  outline: none; /* Elimina el contorno por defecto */
+  box-shadow: 0 0 0 3px rgba(255, 217, 0, 0.5); /* Sombra de contorno suave para el enfoque */
+}
+
+/* Estilo adicional para dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .navegacion-capitulos {
+      flex-direction: column; /* Los botones se apilan verticalmente en pantallas pequeñas */
+      gap: 10px; /* Menor espacio entre los botones */
+      margin-top: 25px;
+    
+  }
+  .btn-navegacion {
+    font-family: 'Poppins', sans-serif;
+    padding: 12px 10px; /* Tamaño y espacio dentro del botón */
+    background-color: #ffd900ef; /* Color amarillo */
+    color: #333; /* Texto oscuro para buen contraste */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 30px; /* Bordes redondeados para un estilo más suave */
+    font-size: 14px; /* Tamaño de fuente */
+    font-weight: 700; /* Negrita para darle un poco más de presencia */
+    text-transform: uppercase; /* Texto en mayúsculas para un toque más moderno */
+    display: inline-block; /* Asegura que se comporten como botones */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la animación */
+  }
+}
+
+
+
+
+.fin-volumen {
+    text-align: center; /* Centra el texto */
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins */
+    font-weight: 800; /* Establece el peso de la fuente en 700 */
+    font-size: 20px; /* Ajusta el tamaño de la fuente según sea necesario */
+    margin-top: 20px; /* Añade espacio arriba del mensaje */
+    color: #ffffffe2; /* Establece el color del texto (puedes cambiarlo) */
+}
+
+
+
+
+
+
+
+
+
+
+
+#resultado {
+  color: white; /* Color blanco para el texto */
+  background-color: black; /* Fondo negro para contraste */
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+}
